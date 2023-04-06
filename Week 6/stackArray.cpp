@@ -21,6 +21,7 @@ void displayStack();
 
 int main() {
     stackSize = new int;
+    // get the size of the stack from the user
     cout << "Enter the size of the stack :" ;
     cin >> *stackSize;
     
@@ -87,20 +88,22 @@ int Pop() {
         return stack[top + 1]; 
     }
 }
-
+// check if stack is empty
 bool isEmpty(){
     return (top == -1);
 }
-
+// check if stack is full
 bool isFull() {
     return (top+1 >= *stackSize);
 }
 
+// get the top element of the stack
 int stackTop() {
     if (!isEmpty())
         return stack[top];
 }
 
+// display the elements of the stack
 void displayStack() {
     if (isEmpty()){
         cout << "Stack is empty\n";
@@ -109,9 +112,11 @@ void displayStack() {
     // printing the stack elements top to bottom.
     else {
         cout << endl;
+        // go through the each element and print them.
     for(int i = top ; i > -1; i-- ) {
         cout << stack[i] << endl;
     }
+        // print a new line
     cout << endl;
     }
 }
