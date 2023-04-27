@@ -9,8 +9,11 @@ struct node {
 // Inorder traversal
 void traverseInOrder(struct node *root) {
   if (root != NULL){
+// call the function recursively for the left sub tree
     traverseInOrder(root -> left);
+// print the root
     cout << root -> key << " ";
+// call the function recursively for the right sub tree
     traverseInOrder(root -> right);
   }
 
@@ -22,8 +25,11 @@ struct node *insertNode(struct node *node, int key) {
   if (node == NULL){
     // So create a new node to storing that key and return it
     struct node *newNode = (struct node*) malloc(sizeof(struct node));
+// se the key as the key of the new node.
     newNode -> key = key;
+// set right to the null because there is no elements in the right
     newNode -> right = NULL;
+// set left to the null because there is no elements in the left
     newNode -> left = NULL;
     return newNode;
 
@@ -40,7 +46,7 @@ struct node *insertNode(struct node *node, int key) {
   return node;
 }
 
-//Function to find minimum in a tree. 
+//Function to find minimum in the tree. 
 node* FindMin(node* root)
 {
   // since min key is in the final left sub tree trvael untill the root . left is not null
